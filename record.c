@@ -3,7 +3,7 @@
 **
 ** record.c
 */
-/* $XFree86: xc/programs/xgc/record.c,v 1.4 2003/05/07 21:02:07 herrb Exp $ */
+/* $XFree86$ */
 
 #include <X11/Intrinsic.h>
 #include <X11/StringDefs.h>
