@@ -6,7 +6,7 @@
 ** How to make a text widget that returns a string when the cursor
 ** leaves its window.
 */
-/* $XFree86$ */
+/* $XFree86: xc/programs/xgc/text.c,v 1.4 2003/05/07 21:02:07 herrb Exp $ */
 
 #include <stdio.h>
 #include <stdlib.h>
