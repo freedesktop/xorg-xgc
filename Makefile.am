@@ -23,7 +23,7 @@ AM_YFLAGS = -d
 
 bin_PROGRAMS = xgc
 
-xgc_CFLAGS = $(DEP_CFLAGS)
+xgc_CFLAGS = $(DEP_CFLAGS) -D_BSD_SOURCE
 xgc_LDADD = $(DEP_LIBS) -lm
 
 xgc_SOURCES =	\
