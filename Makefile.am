@@ -63,7 +63,7 @@ SUFFIXES = .ad
 
 appdefault_DATA = $(APPDEFAULTFILES)
 
-EXTRA_DIST = $(foreach FILE, $(APPDEFAULTFILES), $(FILE).ad) tile Bugs	\
+EXTRA_DIST = $(APPDEFAULTFILES:%=%.ad) tile Bugs	\
 	Written/FilledRects						\
 	Written/Interface						\
 	Written/Jim							\
