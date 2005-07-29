@@ -22,7 +22,7 @@ dnl
 dnl Process this file with autoconf to create configure.
 
 AC_PREREQ([2.57])
-AC_INIT(xgc,[7.0], [xorg@freedesktop.org],xgc)
+AC_INIT(xgc,[0.99.0], [https://bugs.freedesktop.org/enter_bug.cgi?product=xorg],xgc)
 AM_INIT_AUTOMAKE([dist-bzip2])
 AM_MAINTAINER_MODE
 
@@ -37,5 +37,7 @@ XAW_CHECK_XPRINT_SUPPORT(XGC)
 
 AC_SUBST(XGC_CFLAGS)
 AC_SUBST(XGC_LIBS)
+
+XORG_RELEASE_VERSION
 
 AC_OUTPUT([Makefile])
