@@ -43,7 +43,7 @@ xgc_SOURCES =	\
         text.c \
         xgc.h
 
-dist_man_MANS = \
+dist_man1_MANS = \
         xgc.man
 
 BUILT_SOURCES = gram.h
