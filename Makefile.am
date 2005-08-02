@@ -46,7 +46,9 @@ xgc_SOURCES =	\
 dist_man1_MANS = \
         xgc.man
 
-BUILT_SOURCES = gram.h
+BUILT_SOURCES = gram.h gram.c lex.c
+
+gram.h: gram.c
 
 # App default files  (*.ad)
 
@@ -72,5 +74,5 @@ EXTRA_DIST = $(APPDEFAULTFILES:%=%.ad) tile Bugs	\
 	Written/Outline							\
 	Written/Widget
 
-CLEANFILES = $(APPDEFAULTFILES)
+CLEANFILES = $(APPDEFAULTFILES) $(BUILT_SOURCES)
 
