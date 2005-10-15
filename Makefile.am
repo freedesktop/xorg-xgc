@@ -47,6 +47,7 @@ appman_SOURCES = \
         xgc.man
 
 BUILT_SOURCES = gram.h gram.c lex.c
+MAINTAINERCLEANFILES = $(BUILT_SOURCES)
 
 gram.h: gram.c
 
@@ -74,7 +75,7 @@ EXTRA_DIST = $(APPDEFAULTFILES:%=%.ad) tile Bugs	\
 	Written/Outline							\
 	Written/Widget
 
-CLEANFILES = $(APPDEFAULTFILES) $(BUILT_SOURCES)
+CLEANFILES = $(APPDEFAULTFILES)
 
 
 appmandir =  $(mandir)/man$(APP_MAN_SUFFIX)
