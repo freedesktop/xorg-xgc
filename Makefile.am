@@ -53,7 +53,7 @@ gram.h: gram.c
 
 # App default files  (*.ad)
 
-appdefaultdir = $(sysconfdir)/X11/app-defaults
+appdefaultdir = $(libdir)/X11/app-defaults
 
 
 APPDEFAULTFILES = \
