@@ -38,6 +38,10 @@ XAW_CHECK_XPRINT_SUPPORT(XGC)
 AC_SUBST(XGC_CFLAGS)
 AC_SUBST(XGC_LIBS)
 
+PKG_CHECK_MODULES(APPDEFS, xt)
+appdefaultdir=$(pkg-config --variable=appdefaultdir xt)
+AC_SUBST(appdefaultdir)
+
 XORG_MANPAGE_SECTIONS
 XORG_RELEASE_VERSION
 
