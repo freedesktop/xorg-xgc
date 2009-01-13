@@ -35,7 +35,6 @@ xgc_SOURCES =	\
         interpret.c \
 	lex.l \
         main.c \
-        main.h \
         planemask.c \
         record.c \
         testfrac.c \
@@ -52,6 +51,8 @@ MAINTAINERCLEANFILES = $(BUILT_SOURCES)
 gram.h: gram.c
 
 # App default files
+
+DISTCHECK_CONFIGURE_FLAGS = --with-appdefaultdir=\$${datadir}/X11/app-defaults
 
 appdefaultdir = @appdefaultdir@
 
@@ -106,6 +107,6 @@ MAINTAINERCLEANFILES += ChangeLog
 .PHONY: ChangeLog
 
 ChangeLog:
-	(GIT_DIR=$(top_srcdir)/.git git-log > .changelog.tmp && mv .changelog.tmp ChangeLog; rm -f .changelog.tmp) || (touch ChangeLog; echo 'git directory not found: installing possibly empty changelog.' >&2)
+	$(CHANGELOG_CMD)
 
 dist-hook: ChangeLog

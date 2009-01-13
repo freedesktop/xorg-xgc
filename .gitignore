@@ -22,3 +22,8 @@ stamp-h1
 xgc
 xgc.1
 *~
+*.o
+ylwrap
+xgc-*.tar.*
+ChangeLog
+tags
