@@ -57,8 +57,8 @@ DISTCHECK_CONFIGURE_FLAGS = --with-appdefaultdir=\$${datadir}/X11/app-defaults
 appdefaultdir = @appdefaultdir@
 
 dist_appdefault_DATA = \
-        app-defaults/Xgc
-
+        app-defaults/Xgc \
+        app-defaults/Xgc-color
 
 EXTRA_DIST = tile Bugs	\
 	Written/FilledRects						\

@@ -371,12 +371,14 @@ main(int argc, char *argv[])
   gcchoiceargs[0].value = (XtArgVal) fontchoice;
   foregroundchoice = XtCreateManagedWidget("foreground",formWidgetClass,GCform,
 				   gcchoiceargs,XtNumber(gcchoiceargs));
-  foregroundtext = create_text_choice(foregroundchoice,TForeground,4,50);
+  foregroundtext = create_text_choice(foregroundchoice,TForeground,9,50);
+  /* FIXME 9 characters may not be the proper choice; really it
+   * should understand a more proper pixel specification... */
 
   gcchoiceargs[1].value = (XtArgVal) foregroundchoice;
   backgroundchoice = XtCreateManagedWidget("background",formWidgetClass,GCform,
 				   gcchoiceargs,XtNumber(gcchoiceargs));
-  backgroundtext = create_text_choice(backgroundchoice,TBackground,4,50);
+  backgroundtext = create_text_choice(backgroundchoice,TBackground,9,50);
   
   gcchoiceargs[1].value = (XtArgVal) NULL;
   gcchoiceargs[0].value = (XtArgVal) foregroundchoice;
@@ -607,18 +609,8 @@ clear_result_window(void)
 static void
 set_foreground_and_background(void)
 {
-  static XtResource resources[] = {
-    {XtNforeground, XtCForeground, XtRPixel, sizeof(Pixel),
-       XtOffsetOf(XStuff, foreground), XtRString, XtDefaultForeground},
-    {XtNbackground, XtCBackground, XtRPixel, sizeof(Pixel),
-       XtOffsetOf(XStuff, background), XtRString, XtDefaultBackground}
-  };
-  
-  XtGetApplicationResources(bigdaddy, (XtPointer) &X, resources,
-			    XtNumber(resources), NULL, (Cardinal) 0);
-
-  X.gcv.foreground = X.foreground;
-  X.gcv.background = X.background;
+  X.gcv.foreground = X.foreground = 0;
+  X.gcv.background = X.background = 0xffffffff;
 
   X.fontname = "6x10";
   GC_change_font(X.fontname,FALSE);
