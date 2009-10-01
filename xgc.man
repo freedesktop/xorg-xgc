@@ -31,8 +31,8 @@ stored in the RESOURCE_MANAGER property.
 .SH "SEE ALSO"
 X(__miscmansuffix__)
 .SH BUGS
-This program isn't really finished yet.
-.br
-See \fIX(__miscmansuffix__)\fP for a full statement of rights and permissions.
+This program isn't really finished yet, but it probably never will be,
+since it only demonstrates the original X11 core protocol rendering
+operations, which few modern programs use anymore.
 .SH AUTHORS
 Dan Schmidt, MIT
