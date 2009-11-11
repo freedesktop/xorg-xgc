@@ -23,7 +23,7 @@ AM_YFLAGS = -d
 
 bin_PROGRAMS = xgc
 
-AM_CFLAGS = $(XGC_CFLAGS) -D_BSD_SOURCE
+AM_CFLAGS = $(CWARNFLAGS) $(XGC_CFLAGS) -D_BSD_SOURCE
 xgc_LDADD = $(XGC_LIBS) -lm
 
 xgc_SOURCES =	\
@@ -99,7 +99,7 @@ MAN_SUBSTS = \
 SUFFIXES = .$(APP_MAN_SUFFIX) .man
 
 .man.$(APP_MAN_SUFFIX):
-	sed $(MAN_SUBSTS) < $< > $@
+	$(AM_V_GEN)$(SED) $(MAN_SUBSTS) < $< > $@
 
 EXTRA_DIST += ChangeLog
 MAINTAINERCLEANFILES += ChangeLog
