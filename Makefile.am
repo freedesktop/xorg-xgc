@@ -46,7 +46,8 @@ appman_PRE = \
         xgc.man
 
 BUILT_SOURCES = gram.h gram.c lex.c
-MAINTAINERCLEANFILES = $(BUILT_SOURCES)
+MAINTAINERCLEANFILES = ChangeLog INSTALL
+MAINTAINERCLEANFILES += $(BUILT_SOURCES) 
 
 gram.h: gram.c
 
