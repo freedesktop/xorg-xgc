@@ -61,11 +61,6 @@ typedef struct {
   WidgetList widgets;
 } ChoiceDesc;
 
-#ifndef HAS_SNPRINTF
-#include <X11/Xmu/SysUtil.h>
-#define snprintf XmuSnprintf
-#endif
-
 /************/
 
 extern XStuff X;
