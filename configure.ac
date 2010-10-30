@@ -1,4 +1,3 @@
-
 dnl  Copyright 2005 Red Hat, Inc.
 dnl 
 dnl  Permission to use, copy, modify, distribute, and sell this software and its
@@ -38,14 +37,8 @@ AC_PROG_YACC
 AC_PATH_PROG([YACC_INST], $YACC)
 AC_CHECK_FILE([$srcdir/gram.c], [],
               [test -z "$YACC_INST" && AC_MSG_ERROR([yacc not found - unable to compile gram.y])])
-AC_PROG_CC
-AC_PROG_INSTALL
 
-PKG_CHECK_MODULES(XGC, xaw7)
-AC_SUBST(XGC_CFLAGS)
-AC_SUBST(XGC_LIBS)
-
-PKG_CHECK_MODULES(APPDEFS, xt)
+PKG_CHECK_MODULES(XGC, xaw7 xt)
 xt_appdefaultdir=`$PKG_CONFIG --variable=appdefaultdir xt`
 AC_ARG_WITH(appdefaultdir,
 	AC_HELP_STRING([--with-appdefaultdir=<pathname>],
