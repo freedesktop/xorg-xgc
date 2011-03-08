@@ -43,11 +43,8 @@ xgc_SOURCES =	\
         text.c \
         xgc.h
 
-BUILT_SOURCES = gram.h gram.c lex.c
+BUILT_SOURCES = gram.h
 MAINTAINERCLEANFILES = ChangeLog INSTALL
-MAINTAINERCLEANFILES += $(BUILT_SOURCES) 
-
-gram.h: gram.c
 
 # App default files
 
