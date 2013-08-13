@@ -40,7 +40,7 @@ XORG_DEFAULT_OPTIONS
 AC_PROG_LEX
 AC_PROG_YACC
 AC_PATH_PROG([YACC_INST], $YACC)
-if test ! -f "gram.c"; then
+if ! test -f "$srcdir/gram.c"; then
    if test -z "$YACC_INST"; then
       AC_MSG_ERROR([yacc not found - unable to compile gram.y])
    fi
